@@ -4,15 +4,22 @@
 
 - [Machine Learning](#machine-learning)
 	- [Machine Learning Algorithms](#machine-learning-algorithms)
+	- [Supervised Learning](#supervised-learning)
+		- [Linear Regression](#linear-regression)
+			- [Hypothesis Function](#hypothesis-function)
+			- [Cost Function](#cost-function)
+			- [Gradient Descent](#gradient-descent)
 
-- Artificial intelligence (AI) is the broad science of mimicking human abilities, machine learning is a specific subset of AI that trains a machine how to learn.
+
+> **Artificial intelligence (AI) is the broad science of mimicking human abilities, machine learning is a specific subset of AI that trains a machine how to learn.**
 
 ## Machine Learning
 
-> - **Machine learning is a field of study that gives computers the ability to learn without being explicitly(clearly) programmed**.
-- Machine learning techniques are used to automatically find the valuable underlying patterns within complex data that we would otherwise struggle to discover. The hidden patterns and knowledge about a problem can be used to predict future events and perform all kinds of complex decision making.
+> - **Machine learning is a field of study that gives computers the ability to learn without being explicitly(clearly) programmed.**
 
-- Tom Mitchell provides a more modern definition: “A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.
+- Machine learning techniques are used to automatically find the **valuable underlying patterns within complex data** that we would otherwise struggle to discover. The hidden patterns and knowledge about a problem can be used to **predict future events** and perform all kinds of complex decision making.
+
+- Tom Mitchell provides a more modern definition: `“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.`
 
 
 ### Machine Learning Algorithms
@@ -29,36 +36,53 @@
 #### Example
 - Given data about the area of houses and their price, try to predict their price for new area.
 
-### Types of supervised learning
+## Types of supervised learning
 - `Regression`
 - `Classification`
 
-#### Regression
+### Regression
 - Here we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function.
 - Given a picture of a person, We have to predict his/her age(Continuous).
 
-#### Classification
+### Classification
 - Here we are trying to map input variables into discrete categories. 
 - Given a picture of a person, We have to predict their gender (Male/Female) (Discrete).
 
-### Linear Regression
+## Linear Regression
 
 - Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data.
 
 - Training Dataset
-	> - **X**   **Y**
-	> - 2500    550000
-	> - 2700    550000
-	> - 3000    565000
 
-- **Hypothesis Function**
+<div>
+<center><table style="padding-left: 100px;">
+	<tr>
+    <th>X</th>
+    <th>Y</th>
+  </tr>
+  <tr>
+    <td>2500</td>
+    <td>550000</td>
+  </tr>
+  <tr>
+    <td>2700</td>
+    <td>550000</td>
+  </tr>
+  <tr>
+    <td>3000</td>
+    <td>565000</td>
+  </tr>
+</table>
+</center>
+</div>
+## Hypothesis Function
 
 - Our hypothesis function
 	- `Prediction ​= weight * x + bias`
 - Example
 	- Prediction = weight * (2800)  + bias​
 
-### Cost Function
+## Cost Function
 
 - Accuracy of our hypothesis function can be measured by using cost function.
 
@@ -75,10 +99,10 @@
 ### Our Goal
 - `minimize(cost(weight,bias))`
 
-### Gradient Descent
+## Gradient Descent
 - Gradient descent is an optimization algorithm used to find the values of parameters (coefficients) that minimizes a cost function.
 > - There are two things that you should know to reach the minima.
-> 	- `which way to go and how big a step to take. `
+> - **which way to go and how big a step to take.**
 
 - We can use gradient descent to do this with the use of derivatives effectively.
 - A derivative is the slope of a graph at any given point and it will give us the direction to move towards.
