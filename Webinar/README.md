@@ -75,6 +75,7 @@
 </table>
 </center>
 </div>
+
 ## Hypothesis Function
 
 - Our hypothesis function
