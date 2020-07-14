@@ -9,6 +9,17 @@
 			- [Hypothesis Function](#hypothesis-function)
 			- [Cost Function](#cost-function)
 			- [Gradient Descent](#gradient-descent)
+			- [Multiple Variables](#multiple-variables)
+			- [Polynomial Regression](#polynomial-regression)
+		- [Logistic Regression](#logistic-regression)
+		- [One Vs All](#one-vs-all)
+		- [Regularization](#regularization)
+		- [Vectorization](#vectorization)
+	- [Unsupervised Learning](#unsupervised-learning)
+		- [Clustering](#clustering)
+		- [Application](#application)
+	- [Reinforcement Learning](#reinforcement-learning)
+- [Deep Learning](#deep-learning)
 
 
 > **Artificial intelligence (AI) is the broad science of mimicking human abilities, machine learning is a specific subset of AI that trains a machine how to learn.**
@@ -53,27 +64,29 @@
 - Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data.
 
 - Training Dataset
-
-<div>
-<center><table style="padding-left: 100px;">
-	<tr>
-    <th>X</th>
-    <th>Y</th>
-  </tr>
-  <tr>
-    <td>2500</td>
-    <td>550000</td>
-  </tr>
-  <tr>
-    <td>2700</td>
-    <td>550000</td>
-  </tr>
-  <tr>
-    <td>3000</td>
-    <td>565000</td>
-  </tr>
-</table>
-</center>
+- X - input
+- Y - output
+ <div>
+	<center>
+		<table style="padding-left: 100px;">
+			<tr>
+			    <th>X(area)</th>
+			    <th>Y(price)</th>
+			</tr>
+		  	<tr>
+			    <td>2500</td>
+			    <td>550000</td>
+		  	</tr>
+		  	<tr>
+			    <td>2700</td>
+			    <td>550000</td>
+		  	</tr>
+		  	<tr>
+			    <td>3000</td>
+			    <td>565000</td>
+		  	</tr>
+		</table>
+	</center>
 </div>
 
 ## Hypothesis Function
@@ -112,6 +125,7 @@
 	- The size of steps taken to reach the minimum is called learning rate.
 	- If we use higher learning rate it will move larger steps but there is a risk of overshooting the minima.
 	- If we use lower learning rate it will take more steps to converge.
+	- ∝ is a hyperparameter
 	- Try Experimenting with it
 		- [Source](https://developers.google.com/machine-learning/crash-course/fitter/graph)
 
@@ -126,3 +140,173 @@
 		- `w:=w-learning_rate * (negative slope) here w will increase.`
 	- same as for bias
 
+## Multiple Variables
+<div>
+	<center>
+		<table style="padding-left: 100px;">
+			<tr>
+			    <th>X1(area)</th>
+			    <th>X2(age)</th>
+			    <th>Y(price)</th>
+			</tr>
+		  	<tr>
+			    <td>2500</td>
+			    <td>10</td>
+			    <td>550000</td>
+		  	</tr>
+		  	<tr>
+			    <td>2700</td>
+			    <td>20</td>
+			    <td>550000</td>
+		  	</tr>
+		  	<tr>
+			    <td>3000</td>
+			    <td>15</td>
+			    <td>565000</td>
+		  	</tr>
+		</table>
+	</center>
+</div>
+
+- Hypothesis
+	- Prediction ​= weight1 * x1 +weight2 * x2+ bias
+
+- Example
+	- Prediction = weight1 * (2800)  weight2 * (10) + bias​
+
+
+## Polynomial Regression
+
+- Polynomial Regression is a form of linear regression in which the relationship between the independent variable x and dependent variable y is modeled as an nth degree polynomial.
+	- Hypothesis
+	Prediction ​= weight1 * x +weight2 * 𝒙^𝟐 + bias
+
+	- Example
+	Prediction = weight1 * (2800)  weight2 * [𝟐𝟖𝟎𝟎]^𝟐 + bias​
+
+## Logistic Regression
+
+> - Logistic regression is used when the response variable is categorical in nature.
+- Example :
+    - Spam/Not spam
+    - Win/Lose
+    - Pass/Fail
+- Classification : Output={0,1}
+
+- Example Dataset
+
+<div>
+	<center>
+		<table style="padding-left: 100px;">
+			<tr>
+			    <th>X1(area)</th>
+			    <th>X2(price)</th>
+			    <th>Y(sell/Not sell)</th>
+			</tr>
+		  	<tr>
+			    <td>2500</td>
+			    <td>550000</td>
+			    <td>0</td>
+		  	</tr>
+		  	<tr>
+			    <td>2700</td>
+			    <td>550000</td>
+			    <td>1</td>
+		  	</tr>
+		  	<tr>
+			    <td>3000</td>
+			    <td>565000</td>
+			    <td>1</td>
+		  	</tr>
+		</table>
+	</center>
+</div>
+
+- **Hypothesis**
+	- Output should be in range (0<= z <=1)
+	> - Hypothesis = sigmoid(weight1 * x1+ weight2 * x2 + bias)
+	- Where Sigmoid(z) = 1/(1+𝑒^(−𝑧))
+
+	- In order to get our discrete 0 or 1 classification, we can translate the output of the hypothesis function as follows:
+	- Hypothesis ≥ 0.5 → y=1
+	- Hypothesis < 0.5 → y=0
+
+## One vs All
+
+- If we have a classification problem and there are N distinct classes. In this case, we'll have to train a multi-class classifier instead of a binary one. 
+- One-vs-all classification is a method which involves **training N distinct binary classifiers**, each designed for recognizing a particular class.
+
+## Regularization
+
+- Regularization is designed to address the problem of overfitting.
+- We will come across a situation where your model performed exceptionally well on train data, but was not able to predict test data.
+
+- **Formula**
+	- Cost(weight , bias) = `𝟏/𝟐𝒎 ∑(𝒊=𝟏)^𝒎[[(𝑯𝒚𝒑𝒐𝒕𝒉𝒆𝒔𝒊𝒔(𝒙_𝒊)−𝒚_𝒊)]^𝟐 ] + (lambda/(2*m)) * ∑||w^2|| `
+	- lambda is a hyperparameter
+- The additional term controls the excessively fluctuating function such that the coefficients don't take extreme values. 
+
+## Vectorization
+
+- Vectorization is the process of converting an algorithm from operating on a single value at a time to operating on a set of values (vector) at one time.
+- Vectorized Implementation of cost function
+```python
+	np.sum((np.dot(x , w)-y)**2)
+```
+
+- Non Vectorized Implementation
+```python
+	result=list()
+	for i in range(2):
+	    ans=0
+	    for j in range(2):
+	        ans=ans+l1[i][j]*l2[j][0]
+	    result.append((ans-l3[i][0])**2)
+	sum(result)
+```
+
+## Unsupervised Learning
+
+- Unsupervised learning allows us to approach problems with little or no idea what our outputs should look like.
+- Unsupervised Learning algorithms will help find structure or patterns in the underlying data.
+- Example
+	- Social Network Analysis
+	- Astronomical Data Analysis
+
+## Clustering
+
+- **K Means Algorithm**
+	- It finds a fixed number (k) of clusters in a set of data.
+	- Randomly initialize points in the dataset.
+	- Assign all examples into one of the groups based on which cluster centroid the example is closest to.
+	- Compute the averages for all the points inside each of the clusters centroid groups, then move the cluster centroid points to those averages.
+	- Repeat the above 2 steps
+
+### Application
+
+- **Image Compression**
+
+## Reinforcement Learning
+> - The system takes a decision, learns from the feedback and takes better decisions in the future.
+- It is about taking suitable action to maximize reward in a particular situation. In the absence of a training dataset, it is bound to learn from its experience.
+- Example: 
+	- We have an agent and a reward, with many hurdles in between.
+
+- **Applications**
+	- Robotics
+	- Self driving cars
+	- Manufacturing
+
+- **Google Atari breakout**
+	- DQN(Deep Q-Network) finds and exploits the optimal strategy in this game, which is to make a tunnel around the side, and then allow the ball to hit blocks by bouncing behind the wall.
+	- [source](https://www.youtube.com/watch?v=TmPfTpjtdgg)
+- **Google Deepmind Alpha Go**
+	- AlphaGo is the first computer program to defeat a professional human Go player, a landmark achievement that experts believe was a decade ahead of its time.
+	- [Documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y)
+- **Multi-Agent Hide and Seek**
+	> - We’ve observed **agents discovering progressively more complex tool** use while playing a simple game of hide-and-seek. Through training in our new simulated hide-and-seek environment, **agents build a series of six distinct strategies and counterstrategies**, some of which we did not know our environment supported. The self-supervised emergent complexity in this simple environment further suggests that multi-agent co-adaptation may one day produce extremely complex and intelligent behavior. - **by Open AI**
+	- [source](https://www.youtube.com/watch?v=kopoLzvh5jY)
+
+# Deep Learning
+- Deep learning is a branch of machine learning which is completely based on artificial neural networks.
+> - Neural Network is going to mimic the human brain.
