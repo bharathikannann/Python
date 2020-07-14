@@ -134,8 +134,8 @@
 
 - **Algorithm** 
 
-	> weight := weight - learning_rate * differentiation of cost with respect to weight
-	> bias := bias - learning rate * differentiation of cost with respect to bias
+	> - weight := weight - learning_rate * differentiation of cost with respect to weight
+	> - bias := bias - learning rate * differentiation of cost with respect to bias
 
 	- if the derivative(slope) is positive then subtracting it will decrease the weight so it will move towards minima.
 		- `w:=w-learning_rate * (positive slope) here w will decrease.`
@@ -307,12 +307,12 @@
 	- AlphaGo is the first computer program to defeat a professional human Go player, a landmark achievement that experts believe was a decade ahead of its time.
 	- [Documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y)
 - **Multi-Agent Hide and Seek**
-	> - We’ve observed **agents discovering progressively more complex tool** use while playing a simple game of hide-and-seek. Through training in our new simulated hide-and-seek environment, **agents build a series of six distinct strategies and counterstrategies**, some of which we did not know our environment supported. The self-supervised emergent complexity in this simple environment further suggests that multi-agent co-adaptation may one day produce extremely complex and intelligent behavior. - **by Open AI**
+	> We’ve observed **agents discovering progressively more complex tool** use while playing a simple game of hide-and-seek. Through training in our new simulated hide-and-seek environment, **agents build a series of six distinct strategies and counterstrategies**, some of which we did not know our environment supported. The self-supervised emergent complexity in this simple environment further suggests that multi-agent co-adaptation may one day produce extremely complex and intelligent behavior. - **by Open AI**
 	- [source](https://www.youtube.com/watch?v=kopoLzvh5jY)
 
 # `Deep Learning`
 - Deep learning is a branch of machine learning which is completely based on artificial neural networks.
-> - Neural Network is going to mimic the human brain.
+> Neural Network is going to mimic the human brain.
 
 ## `Neural Networks`
 - Neural networks are used to solve complex problems people face in real-world situations. These networks can learn and model the relationships between inputs and outputs that are complex and nonlinear.
@@ -322,14 +322,14 @@
 	- [source](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.73792&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
 ### `Neural Networks from scratch in python`
-	- [refer here](https://github.com/bharathikannan1311/Python/blob/master/ML/Neural%20Networks/Neural%20Networks%20.ipynb)
+- [refer here](https://github.com/bharathikannan1311/Python/tree/master/ML/Neural%20Networks)
 
 - **Applications**
 	- Financial Forecasting
 	- Targeted Marketing
 
 ## `Convolutional Neural Networks`
-> - Convolutional neural network is most commonly applied to analyzing visual imagery.
+> Convolutional neural network is most commonly applied to analyzing visual imagery.
 - CNN is more efficient in terms of memory and complexity. Imagine NNs with billions of neurons, then CNNs would be less complex and saves memory compared to the NN.
 
 - **Live demo**
