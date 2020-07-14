@@ -20,26 +20,29 @@
 		- [Application](#application)
 	- [Reinforcement Learning](#reinforcement-learning)
 - [Deep Learning](#deep-learning)
-
+	- [Neural Networks](#neural-networks)
+		- [Neural Networks from scratch in python](#neural-networks-from-scratch-in-python)
+	- [Convolutional Neural Networks](#convolutional-neural-networks)
+	- [Recurrent Neural Networks](#recurrent-neural-networks)
 
 > **Artificial intelligence (AI) is the broad science of mimicking human abilities, machine learning is a specific subset of AI that trains a machine how to learn.**
 
 ## `Machine Learning`
 
-> - **Machine learning is a field of study that gives computers the ability to learn without being explicitly(clearly) programmed.**
+> **Machine learning is a field of study that gives computers the ability to learn without being explicitly(clearly) programmed.**
 
 - Machine learning techniques are used to automatically find the **valuable underlying patterns within complex data** that we would otherwise struggle to discover. The hidden patterns and knowledge about a problem can be used to **predict future events** and perform all kinds of complex decision making.
 
 - Tom Mitchell provides a more modern definition: `“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.`
 
 
-### Machine Learning Algorithms
+### `Machine Learning Algorithms`
 
 - **Supervised Learning** 
 - **Unsupervised Learning**
 - **Reinforcement Learning**
 
-## Supervised Learning
+## `Supervised Learning`
 
 - Supervised learning is when the model is getting trained on a labelled dataset.
 - Labelled dataset is one which have both input and output parameters.
@@ -59,9 +62,9 @@
 - Here we are trying to map input variables into discrete categories. 
 - Given a picture of a person, We have to predict their gender (Male/Female) (Discrete).
 
-## Linear Regression
+## `Linear Regression`
 
-- Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data.
+> Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data.
 
 - Training Dataset
 - X - input
@@ -89,18 +92,18 @@
 	</center>
 </div>
 
-## Hypothesis Function
+## `Hypothesis Function`
 
 - Our hypothesis function
 	- `Prediction ​= weight * x + bias`
 - Example
 	- Prediction = weight * (2800)  + bias​
 
-## Cost Function
+## `Cost Function`
 
 - Accuracy of our hypothesis function can be measured by using cost function.
 
-- A Cost function basically tells us how good our model is at making predictions for a given value of weight and bias.
+- A Cost function basically tells us *how good our model is at making predictions* for a given value of weight and bias.
 
 - **Formula**
 	> - Cost(weight , bias) = `𝟏/𝟐𝒎 ∑(𝒊=𝟏)^𝒎[[(𝑯𝒚𝒑𝒐𝒕𝒉𝒆𝒔𝒊𝒔(𝒙_𝒊)−𝒚_𝒊)]^𝟐 ]`
@@ -108,31 +111,31 @@
 	- `𝐻𝑦𝑝𝑜𝑡ℎ𝑒𝑠𝑖𝑠 𝑥_𝑖 − 𝑦_𝑖` - Difference of Predicted and Original value.
 
 - This takes an average of all the results of the hypothesis to the actual output y's.
-- Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least.
+- Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the **least**.
 
 ### Our Goal
 - `minimize(cost(weight,bias))`
 
-## Gradient Descent
+## `Gradient Descent`
 - Gradient descent is an optimization algorithm used to find the values of parameters (coefficients) that minimizes a cost function.
-> - There are two things that you should know to reach the minima.
-> - **which way to go and how big a step to take.**
+> There are two things that you should know to reach the minima.
+> **which way to go and how big a step to take.**
 
 - We can use gradient descent to do this with the use of derivatives effectively.
 - A derivative is the slope of a graph at any given point and it will give us the direction to move towards.
 
 - **Learning Rate(∝)**
-	- The size of steps taken to reach the minimum is called learning rate.
+	> The size of steps taken to reach the minimum is called learning rate.
 	- If we use higher learning rate it will move larger steps but there is a risk of overshooting the minima.
 	- If we use lower learning rate it will take more steps to converge.
-	- ∝ is a hyperparameter
+	- ∝ is a **hyperparameter**
 	- Try Experimenting with it
 		- [Source](https://developers.google.com/machine-learning/crash-course/fitter/graph)
 
 - **Algorithm** 
 
-	> - weight := weight - learning_rate * differentiation of cost with respect to weight
-	> - bias := bias - learning rate * differentiation of cost with respect to bias
+	> weight := weight - learning_rate * differentiation of cost with respect to weight
+	> bias := bias - learning rate * differentiation of cost with respect to bias
 
 	- if the derivative(slope) is positive then subtracting it will decrease the weight so it will move towards minima.
 		- `w:=w-learning_rate * (positive slope) here w will decrease.`
@@ -140,7 +143,7 @@
 		- `w:=w-learning_rate * (negative slope) here w will increase.`
 	- same as for bias
 
-## Multiple Variables
+## `Multiple Variables`
 <div>
 	<center>
 		<table style="padding-left: 100px;">
@@ -168,25 +171,25 @@
 	</center>
 </div>
 
-- Hypothesis
-	- Prediction ​= weight1 * x1 +weight2 * x2+ bias
+- **Hypothesis**
+	- **Prediction ​= weight1 * x1 +weight2 * x2+ bias**
 
-- Example
+- **Example**
 	- Prediction = weight1 * (2800)  weight2 * (10) + bias​
 
 
-## Polynomial Regression
+## `Polynomial Regression`
 
 - Polynomial Regression is a form of linear regression in which the relationship between the independent variable x and dependent variable y is modeled as an nth degree polynomial.
-	- Hypothesis
-	Prediction ​= weight1 * x +weight2 * 𝒙^𝟐 + bias
+	- **Hypothesis**
+		- Prediction ​= weight1 * x +weight2 * 𝒙^𝟐 + bias
 
-	- Example
-	Prediction = weight1 * (2800)  weight2 * [𝟐𝟖𝟎𝟎]^𝟐 + bias​
+	- **Example**
+		- Prediction = weight1 * (2800)  weight2 * [𝟐𝟖𝟎𝟎]^𝟐 + bias​
 
-## Logistic Regression
+## `Logistic Regression`
 
-> - Logistic regression is used when the response variable is categorical in nature.
+> Logistic regression is used when the response variable is categorical in nature.
 - Example :
     - Spam/Not spam
     - Win/Lose
@@ -224,19 +227,19 @@
 
 - **Hypothesis**
 	- Output should be in range (0<= z <=1)
-	> - Hypothesis = sigmoid(weight1 * x1+ weight2 * x2 + bias)
+	> Hypothesis = sigmoid(weight1 * x1+ weight2 * x2 + bias)
 	- Where Sigmoid(z) = 1/(1+𝑒^(−𝑧))
 
 	- In order to get our discrete 0 or 1 classification, we can translate the output of the hypothesis function as follows:
 	- Hypothesis ≥ 0.5 → y=1
 	- Hypothesis < 0.5 → y=0
 
-## One vs All
+## `One vs All`
 
 - If we have a classification problem and there are N distinct classes. In this case, we'll have to train a multi-class classifier instead of a binary one. 
 - One-vs-all classification is a method which involves **training N distinct binary classifiers**, each designed for recognizing a particular class.
 
-## Regularization
+## `Regularization`
 
 - Regularization is designed to address the problem of overfitting.
 - We will come across a situation where your model performed exceptionally well on train data, but was not able to predict test data.
@@ -246,15 +249,15 @@
 	- lambda is a hyperparameter
 - The additional term controls the excessively fluctuating function such that the coefficients don't take extreme values. 
 
-## Vectorization
+## `Vectorization`
 
 - Vectorization is the process of converting an algorithm from operating on a single value at a time to operating on a set of values (vector) at one time.
-- Vectorized Implementation of cost function
+- **Vectorized Implementation of cost function**
 ```python
 	np.sum((np.dot(x , w)-y)**2)
 ```
 
-- Non Vectorized Implementation
+- **Non Vectorized Implementation**
 ```python
 	result=list()
 	for i in range(2):
@@ -265,7 +268,7 @@
 	sum(result)
 ```
 
-## Unsupervised Learning
+## `Unsupervised Learning`
 
 - Unsupervised learning allows us to approach problems with little or no idea what our outputs should look like.
 - Unsupervised Learning algorithms will help find structure or patterns in the underlying data.
@@ -273,7 +276,7 @@
 	- Social Network Analysis
 	- Astronomical Data Analysis
 
-## Clustering
+## `Clustering`
 
 - **K Means Algorithm**
 	- It finds a fixed number (k) of clusters in a set of data.
@@ -286,8 +289,8 @@
 
 - **Image Compression**
 
-## Reinforcement Learning
-> - The system takes a decision, learns from the feedback and takes better decisions in the future.
+## `Reinforcement Learning`
+> The system takes a decision, learns from the feedback and takes better decisions in the future.
 - It is about taking suitable action to maximize reward in a particular situation. In the absence of a training dataset, it is bound to learn from its experience.
 - Example: 
 	- We have an agent and a reward, with many hurdles in between.
@@ -307,6 +310,55 @@
 	> - We’ve observed **agents discovering progressively more complex tool** use while playing a simple game of hide-and-seek. Through training in our new simulated hide-and-seek environment, **agents build a series of six distinct strategies and counterstrategies**, some of which we did not know our environment supported. The self-supervised emergent complexity in this simple environment further suggests that multi-agent co-adaptation may one day produce extremely complex and intelligent behavior. - **by Open AI**
 	- [source](https://www.youtube.com/watch?v=kopoLzvh5jY)
 
-# Deep Learning
+# `Deep Learning`
 - Deep learning is a branch of machine learning which is completely based on artificial neural networks.
 > - Neural Network is going to mimic the human brain.
+
+## `Neural Networks`
+- Neural networks are used to solve complex problems people face in real-world situations. These networks can learn and model the relationships between inputs and outputs that are complex and nonlinear.
+- **Neural Network Structure**
+	- [source](https://developers.google.com/machine-learning/crash-course/introduction-to-neural-networks/anatomy)
+- **Tensorflow playground**
+	- [source](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.73792&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
+
+### `Neural Networks from scratch in python`
+	- [refer here](https://github.com/bharathikannan1311/Python/blob/master/ML/Neural%20Networks/Neural%20Networks%20.ipynb)
+
+- **Applications**
+	- Financial Forecasting
+	- Targeted Marketing
+
+## `Convolutional Neural Networks`
+> - Convolutional neural network is most commonly applied to analyzing visual imagery.
+- CNN is more efficient in terms of memory and complexity. Imagine NNs with billions of neurons, then CNNs would be less complex and saves memory compared to the NN.
+
+- **Live demo**
+	- [source](http://poloclub.github.io/cnn-explainer/)
+
+- **Excel Demo by fastai**
+	- [source](https://github.com/fastai/fastai/tree/master/courses/dl1/excel)
+
+- **Applications**
+	- Face recognition.
+	- Image classification.
+	- Human pose estimation.
+	- Document analysis.
+
+## `Recurrent Neural Networks`
+>  In traditional neural networks, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words.
+- The main and most important feature of RNN is Hidden state, which remembers some information about a sequence.
+
+- **Applications**
+	- Language Modelling and Generating Text.
+	- Machine Translation.
+	- Speech Recognition.
+	- Generating Image Descriptions.
+
+
+### References
+
+- Machine Learning course by Andrew NG (coursera)
+- Deep Learning Specialization by Andrew NG (coursera)
+- Blog - towardsdatascience.com
+- Machine Learning crash course (google)
+	- and many other references
