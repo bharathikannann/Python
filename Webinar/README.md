@@ -24,7 +24,7 @@
 
 > **Artificial intelligence (AI) is the broad science of mimicking human abilities, machine learning is a specific subset of AI that trains a machine how to learn.**
 
-## Machine Learning
+## `Machine Learning`
 
 > - **Machine learning is a field of study that gives computers the ability to learn without being explicitly(clearly) programmed.**
 
