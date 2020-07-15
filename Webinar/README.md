@@ -139,7 +139,7 @@
 
 - **Algorithm** 
 
-	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="200px" height="200px"></p>
+	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="300px" height="300px"></p>
 
 	> - weight := weight - learning_rate * differentiation of cost with respect to weight
 	> - bias := bias - learning rate * differentiation of cost with respect to bias
@@ -184,7 +184,7 @@
 </div>
 
 - **Hypothesis**
-	- **Prediction ​= weight1 * x1 +weight2 * x2+ bias**
+	- **Prediction = weight1 * x1 +weight2 * x2+ bias**
 
 - **Example**
 	- Prediction = weight1 * (2800)  weight2 * (10) + bias​
@@ -266,7 +266,7 @@
 	- lambda is a hyperparameter
 - The additional term controls the excessively fluctuating function such that the coefficients don't take extreme values. 
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="500px" height="300px"></p>
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="550px" height="300px"></p>
 
 ## `Vectorization`
 
