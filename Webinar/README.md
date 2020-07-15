@@ -153,7 +153,7 @@
 
 ## `Linear Regression from scratch in python`
 - For complete code
-- [refer here in jupyter notebook](https://github.com/bharathikannan1311/Python/tree/master/Webinar/LinearRegressionfromscratch)
+	- refer here - https://github.com/bharathikannan1311/Python/tree/master/Webinar/LinearRegressionfromscratch
 
 ### Implementation
 - Importing the libraries
@@ -189,11 +189,11 @@ X = np.stack([np.ones(m), X],axis = 1)
 ```
 
 - **Cost Function**
-	- Cost(theta) = `𝟏/𝟐𝒎 ∑(𝒊=𝟏)^𝒎[[(𝑯𝒚𝒑𝒐𝒕𝒉𝒆𝒔𝒊𝒔(𝒙_𝒊)−𝒚_𝒊)]^𝟐 ]`
-		- theta is a vector of [theta_0 and theta_1]
+- Cost(theta) = `𝟏/𝟐𝒎 ∑(𝒊=𝟏)^𝒎[[(𝑯𝒚𝒑𝒐𝒕𝒉𝒆𝒔𝒊𝒔(𝒙_𝒊)−𝒚_𝒊)]^𝟐 ]`
+	- theta is a vector of [theta_0 and theta_1]
 	- hypothesis = theta_0 + x * theta_1
-		- theta_0 represents bias
-		- theta_1 represents weight
+	- theta_0 represents bias
+	- theta_1 represents weight
 ```python
 def computeCost(X,y,theta):
     m = y.size
@@ -205,7 +205,7 @@ def computeCost(X,y,theta):
 
 - **Gradient Descent**
 	- theta_j := theta_j - learning_rate * differentiation of cost with respect to theta_j
-		- where j=0,1
+	- where j=0,1
 	- With each step of gradient descent, your parameters  theta_j  come closer to the optimal values that will achieve the lowest cost J(theta).
 ```python
 def gradientDescent(X, y, theta, alpha, num_iters):
@@ -409,7 +409,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 ### Application
 
 - **Image Compression**
-	- [refer here(https://github.com/bharathikannan1311/Python/tree/master/Webinar/ImageCompression)]
+	- refer here - https://github.com/bharathikannan1311/Python/tree/master/Webinar/ImageCompression
 
 ## `Reinforcement Learning`
 > The system takes a decision, learns from the feedback and takes better decisions in the future.
@@ -452,7 +452,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 	- [source](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.73792&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
 ### `Neural Networks from scratch in python`
-- [refer here](https://github.com/bharathikannan1311/Python/tree/master/ML/Neural%20Networks)
+- refer here - https://github.com/bharathikannan1311/Python/tree/master/ML/Neural%20Networks
 
 - **Applications**
 	- Financial Forecasting
