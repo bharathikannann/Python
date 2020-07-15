@@ -25,7 +25,10 @@
 	- [Convolutional Neural Networks](#convolutional-neural-networks)
 	- [Recurrent Neural Networks](#recurrent-neural-networks)
 
+## Artificial Intelligence
 > **Artificial intelligence (AI) is the broad science of mimicking human abilities, machine learning is a specific subset of AI that trains a machine how to learn.**
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/aimldl.png" width="300px" height="300px"></p>
 
 ## `Machine Learning`
 
@@ -65,6 +68,8 @@
 ## `Linear Regression`
 
 > Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data.
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/lr.png" width="400px" height="250px"></p>
 
 - Training Dataset
 - X - input
@@ -134,6 +139,8 @@
 
 - **Algorithm** 
 
+	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="300px" height="300px"></p>
+
 	> - weight := weight - learning_rate * differentiation of cost with respect to weight
 	> - bias := bias - learning rate * differentiation of cost with respect to bias
 
@@ -142,6 +149,11 @@
 	- if the derivative(slope) is negative the subtracting it will increase the weight si it will move towards minima. 
 		- `w:=w-learning_rate * (negative slope) here w will increase.`
 	- same as for bias
+
+## Linear Regression from scratch in python
+- [refer here](https://github.com/bharathikannan1311/Python/tree/master/Webinar/LinearRegressionfromscratch)
+
+
 
 ## `Multiple Variables`
 <div>
@@ -172,7 +184,7 @@
 </div>
 
 - **Hypothesis**
-	- **Prediction ​= weight1 * x1 +weight2 * x2+ bias**
+	- **Prediction = weight1 * x1 +weight2 * x2+ bias**
 
 - **Example**
 	- Prediction = weight1 * (2800)  weight2 * (10) + bias​
@@ -190,6 +202,9 @@
 ## `Logistic Regression`
 
 > Logistic regression is used when the response variable is categorical in nature.
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/logr.png" width="350px" height="300px"></p>
+
 - Example :
     - Spam/Not spam
     - Win/Lose
@@ -239,6 +254,8 @@
 - If we have a classification problem and there are N distinct classes. In this case, we'll have to train a multi-class classifier instead of a binary one. 
 - One-vs-all classification is a method which involves **training N distinct binary classifiers**, each designed for recognizing a particular class.
 
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/onevsall.jpeg" width="400px" height="300px"></p>
+
 ## `Regularization`
 
 - Regularization is designed to address the problem of overfitting.
@@ -248,6 +265,8 @@
 	- Cost(weight , bias) = `𝟏/𝟐𝒎 ∑(𝒊=𝟏)^𝒎[[(𝑯𝒚𝒑𝒐𝒕𝒉𝒆𝒔𝒊𝒔(𝒙_𝒊)−𝒚_𝒊)]^𝟐 ] + (lambda/(2*m)) * ∑||w^2|| `
 	- lambda is a hyperparameter
 - The additional term controls the excessively fluctuating function such that the coefficients don't take extreme values. 
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="550px" height="300px"></p>
 
 ## `Vectorization`
 
@@ -278,6 +297,8 @@
 
 ## `Clustering`
 
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/clustering.png" width="450px" height="300px"></p>
+
 - **K Means Algorithm**
 	- It finds a fixed number (k) of clusters in a set of data.
 	- Randomly initialize points in the dataset.
@@ -288,10 +309,14 @@
 ### Application
 
 - **Image Compression**
+	- [refer here(https://github.com/bharathikannan1311/Python/tree/master/Webinar/ImageCompression)]
 
 ## `Reinforcement Learning`
 > The system takes a decision, learns from the feedback and takes better decisions in the future.
 - It is about taking suitable action to maximize reward in a particular situation. In the absence of a training dataset, it is bound to learn from its experience.
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/reinforcementlearning.png" width="350px" height="300px"></p>
+
 - Example: 
 	- We have an agent and a reward, with many hurdles in between.
 
@@ -314,8 +339,13 @@
 - Deep learning is a branch of machine learning which is completely based on artificial neural networks.
 > Neural Network is going to mimic the human brain.
 
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/neuron.jpg" width="100px" height="80px"></p>
+
 ## `Neural Networks`
 - Neural networks are used to solve complex problems people face in real-world situations. These networks can learn and model the relationships between inputs and outputs that are complex and nonlinear.
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/nn.png" width="300px" height="300px"></p>
+
 - **Neural Network Structure**
 	- [source](https://developers.google.com/machine-learning/crash-course/introduction-to-neural-networks/anatomy)
 - **Tensorflow playground**
@@ -332,6 +362,8 @@
 > Convolutional neural network is most commonly applied to analyzing visual imagery.
 - CNN is more efficient in terms of memory and complexity. Imagine NNs with billions of neurons, then CNNs would be less complex and saves memory compared to the NN.
 
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/cnn.png" width="500px" height="300px"></p>
+
 - **Live demo**
 	- [source](http://poloclub.github.io/cnn-explainer/)
 
@@ -347,6 +379,8 @@
 ## `Recurrent Neural Networks`
 >  In traditional neural networks, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words.
 - The main and most important feature of RNN is Hidden state, which remembers some information about a sequence.
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/rnn.png" width="700px" height="300px"></p>
 
 - **Applications**
 	- Language Modelling and Generating Text.
