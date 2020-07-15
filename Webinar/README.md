@@ -140,7 +140,7 @@
 
 - **Algorithm** 
 
-	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="300px" height="300px"></p>
+	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="450px" height="350px"></p>
 
 	> - weight := weight - learning_rate * differentiation of cost with respect to weight
 	> - bias := bias - learning rate * differentiation of cost with respect to bias
@@ -372,18 +372,19 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 - Vectorization is the process of converting an algorithm from operating on a single value at a time to operating on a set of values (vector) at one time.
 - **Vectorized Implementation of cost function**
 ```python
-	np.sum((np.dot(x , w)-y)**2)
+	J = (1/(2 * m)) * np.sum(np.square(np.dot(X, theta) - y))
 ```
 
 - **Non Vectorized Implementation**
 ```python
+	k=0 #considering second matrix as vector
 	result=list()
-	for i in range(2):
+	for i in range(2): #no of rows in l1 matrix
 	    ans=0
-	    for j in range(2):
-	        ans=ans+l1[i][j]*l2[j][0]
-	    result.append((ans-l3[i][0])**2)
-	sum(result)
+	    for j in range(2): #no of columns in l1 matrix
+		ans=ans+l1[i][j]*l2[j][k]
+	    result.append((ans-l3[i][k])**2)
+	J = (1/(2 * m)) * sum(result)
 ```
 
 ## `Unsupervised Learning`
