@@ -9,6 +9,7 @@
 			- [Hypothesis Function](#hypothesis-function)
 			- [Cost Function](#cost-function)
 			- [Gradient Descent](#gradient-descent)
+			- [Linear Regression from scratch in python](#linear-regression-from-scratch-in-python)
 			- [Multiple Variables](#multiple-variables)
 			- [Polynomial Regression](#polynomial-regression)
 		- [Logistic Regression](#logistic-regression)
@@ -150,9 +151,107 @@
 		- `w:=w-learning_rate * (negative slope) here w will increase.`
 	- same as for bias
 
-## Linear Regression from scratch in python
-- [refer here](https://github.com/bharathikannan1311/Python/tree/master/Webinar/LinearRegressionfromscratch)
+## `Linear Regression from scratch in python`
+- For complete code
+- [refer here in jupyter notebook](https://github.com/bharathikannan1311/Python/tree/master/Webinar/LinearRegressionfromscratch)
 
+### Implementation
+- Importing the libraries
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+- Reading the csv file
+```python
+data = pd.read_csv("Price_Predection.csv")
+```
+
+- Splitting the data
+```python
+X = data["area(1000m2)"]
+y = data["price(1000$)"]
+```
+
+- Plotting the data
+```python
+plt.scatter(X,y)
+plt.xlabel("Area of the house")
+plt.ylabel("price of the house")
+```
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/linearregressiondatapoints.png" width="400px" height="250px"></p>
+
+- We add another dimension to our data to accommodate the (bias)  intercept term so that it will be easy for vectorization.
+```python
+m=len(X) # length of the training example
+X = np.stack([np.ones(m), X],axis = 1)
+```
+
+- **Cost Function**
+	- Cost(theta) = `𝟏/𝟐𝒎 ∑(𝒊=𝟏)^𝒎[[(𝑯𝒚𝒑𝒐𝒕𝒉𝒆𝒔𝒊𝒔(𝒙_𝒊)−𝒚_𝒊)]^𝟐 ]`
+		- theta is a vector of [theta_0 and theta_1]
+	- hypothesis = theta_0 + x * theta_1
+		- theta_0 represents bias
+		- theta_1 represents weight
+```python
+def computeCost(X,y,theta):
+    m = y.size
+    J = 0
+    #vectorized Implementation
+    J = (1/(2 * m)) * np.sum(np.square(np.dot(X, theta) - y))
+    return J
+```
+
+- **Gradient Descent**
+	- theta_j := theta_j - learning_rate * differentiation of cost with respect to theta_j
+		- where j=0,1
+	- With each step of gradient descent, your parameters  theta_j  come closer to the optimal values that will achieve the lowest cost J(theta).
+```python
+def gradientDescent(X, y, theta, alpha, num_iters):
+    m = y.size
+    theta = theta.copy()  
+    J_history = []  
+    for i in range(num_iters):
+        #Vectorized Implementation 
+        theta = theta - (alpha / m) * np.dot((np.dot(X, theta) - y),X)
+        J_history.append(computeCost(X, y, theta))    
+    return theta, J_history
+```
+
+- Our Linear Regression model
+```python
+#initialiing theta to zeros
+theta = np.zeros(2)
+iterations = 100
+alpha = 0.01
+
+theta, J_history = gradientDescent(X ,y, theta, alpha, iterations)
+```
+
+- Predection for our model
+```python
+np.dot([1,2.5],theta)
+```
+
+- Plotting our model
+```python
+plt.scatter(X[:,1],y)
+plt.xlabel("Area of the house")
+plt.ylabel("price of the house")
+plt.plot(X[:, 1], np.dot(X, theta))
+plt.legend(['Linear regeression', 'Training data']);
+```
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/lrmodel.png" width="400px" height="250px"></p>
+
+
+- Visualizing our cost function
+```python
+plt.plot(np.arange(len(J_history)), J_history, lw=2)
+```
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/costfunctionvisualization.png" width="400px" height="250px"></p>
 
 
 ## `Multiple Variables`
