@@ -40,7 +40,7 @@
 - Tom Mitchell provides a more modern definition: `“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.`
 
 
-### `Machine Learning Algorithms`
+## `Machine Learning Algorithms`
 
 - **Supervised Learning** 
 - **Unsupervised Learning**
@@ -65,6 +65,8 @@
 ### Classification
 - Here we are trying to map input variables into discrete categories. 
 - Given a picture of a person, We have to predict their gender (Male/Female) (Discrete).
+
+## Regression
 
 ## `Linear Regression`
 
@@ -298,7 +300,9 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 	- **Example**
 		- Prediction = weight1 * (2800)  weight2 * [𝟐𝟖𝟎𝟎]^𝟐 + bias​
 
-## `Logistic Regression`
+## Classification
+
+## `Logistic Regression(classification)`
 
 > Logistic regression is used when the response variable is categorical in nature.
 
@@ -365,7 +369,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 	- lambda is a hyperparameter
 - The additional term controls the excessively fluctuating function such that the coefficients don't take extreme values. 
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="550px" height="300px"></p>
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="650px" height="300px"></p>
 
 ## `Vectorization`
 
@@ -462,7 +466,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 > Convolutional neural network is most commonly applied to analyzing visual imagery.
 - CNN is more efficient in terms of memory and complexity. Imagine NNs with billions of neurons, then CNNs would be less complex and saves memory compared to the NN.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/cnn.png" width="500px" height="300px"></p>
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/cnn.png" width="600px" height="300px"></p>
 
 - **Live demo**
 	- [source](http://poloclub.github.io/cnn-explainer/)
@@ -491,8 +495,10 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 
 ### References
 
-- Machine Learning course by Andrew NG (coursera)
-- Deep Learning Specialization by Andrew NG (coursera)
-- Blog - towardsdatascience.com
-- Machine Learning crash course (google)
+- [Machine Learning](https://www.coursera.org/learn/machine-learning) course by Andrew NG (coursera)
+- [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) by Andrew NG (coursera)
+- Blogs - [Towardsdatascience.com](https://towardsdatascience.com/machine-learning/home)
+- [Machine Learning crash course](https://developers.google.com/machine-learning/crash-course/ml-intro) from google
+- [Code template](https://github.com/dibgerge/ml-coursera-python-assignments) - Github
+- [Images](https://github.com/bharathikannan1311/Python/tree/master/Webinar/Images) - taken from multiple sources credit goes to respective owners
 	- and many other references
