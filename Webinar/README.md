@@ -484,7 +484,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 >  In traditional neural networks, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words.
 - The main and most important feature of RNN is Hidden state, which remembers some information about a sequence.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/rnn.png" width="700px" height="300px"></p>
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/rnn.png" width="800px" height="300px"></p>
 
 - **Applications**
 	- Language Modelling and Generating Text.
