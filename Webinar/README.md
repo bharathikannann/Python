@@ -9,6 +9,7 @@
 			- [Hypothesis Function](#hypothesis-function)
 			- [Cost Function](#cost-function)
 			- [Gradient Descent](#gradient-descent)
+			- [Linear Regression from scratch in python](#linear-regression-from-scratch-in-python)
 			- [Multiple Variables](#multiple-variables)
 			- [Polynomial Regression](#polynomial-regression)
 		- [Logistic Regression](#logistic-regression)
@@ -39,7 +40,7 @@
 - Tom Mitchell provides a more modern definition: `“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.`
 
 
-### `Machine Learning Algorithms`
+## `Machine Learning Algorithms`
 
 - **Supervised Learning** 
 - **Unsupervised Learning**
@@ -64,6 +65,8 @@
 ### Classification
 - Here we are trying to map input variables into discrete categories. 
 - Given a picture of a person, We have to predict their gender (Male/Female) (Discrete).
+
+## Regression
 
 ## `Linear Regression`
 
@@ -139,7 +142,7 @@
 
 - **Algorithm** 
 
-	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="300px" height="300px"></p>
+	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="450px" height="350px"></p>
 
 	> - weight := weight - learning_rate * differentiation of cost with respect to weight
 	> - bias := bias - learning rate * differentiation of cost with respect to bias
@@ -150,9 +153,107 @@
 		- `w:=w-learning_rate * (negative slope) here w will increase.`
 	- same as for bias
 
-## Linear Regression from scratch in python
-- [refer here](https://github.com/bharathikannan1311/Python/tree/master/Webinar/LinearRegressionfromscratch)
+## `Linear Regression from scratch in python`
+- For complete code
+	- refer here - https://github.com/bharathikannan1311/Python/tree/master/Webinar/LinearRegressionfromscratch
 
+### Implementation
+- Importing the libraries
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+- Reading the csv file
+```python
+data = pd.read_csv("Price_Predection.csv")
+```
+
+- Splitting the data
+```python
+X = data["area(1000m2)"]
+y = data["price(1000$)"]
+```
+
+- Plotting the data
+```python
+plt.scatter(X,y)
+plt.xlabel("Area of the house")
+plt.ylabel("price of the house")
+```
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/linearregressiondatapoints.png" width="400px" height="250px"></p>
+
+- We add another dimension to our data to accommodate the (bias)  intercept term so that it will be easy for vectorization.
+```python
+m=len(X) # length of the training example
+X = np.stack([np.ones(m), X],axis = 1)
+```
+
+- **Cost Function**
+- Cost(theta) = `𝟏/𝟐𝒎 ∑(𝒊=𝟏)^𝒎[[(𝑯𝒚𝒑𝒐𝒕𝒉𝒆𝒔𝒊𝒔(𝒙_𝒊)−𝒚_𝒊)]^𝟐 ]`
+	- theta is a vector of [theta_0 and theta_1]
+	- hypothesis = theta_0 + x * theta_1
+	- theta_0 represents bias
+	- theta_1 represents weight
+```python
+def computeCost(X,y,theta):
+    m = y.size
+    J = 0
+    #vectorized Implementation
+    J = (1/(2 * m)) * np.sum(np.square(np.dot(X, theta) - y))
+    return J
+```
+
+- **Gradient Descent**
+	- theta_j := theta_j - learning_rate * differentiation of cost with respect to theta_j
+	- where j=0,1
+	- With each step of gradient descent, your parameters  theta_j  come closer to the optimal values that will achieve the lowest cost J(theta).
+```python
+def gradientDescent(X, y, theta, alpha, num_iters):
+    m = y.size
+    theta = theta.copy()  
+    J_history = []  
+    for i in range(num_iters):
+        #Vectorized Implementation 
+        theta = theta - (alpha / m) * np.dot((np.dot(X, theta) - y),X)
+        J_history.append(computeCost(X, y, theta))    
+    return theta, J_history
+```
+
+- Our Linear Regression model
+```python
+#initialiing theta to zeros
+theta = np.zeros(2)
+iterations = 100
+alpha = 0.01
+
+theta, J_history = gradientDescent(X ,y, theta, alpha, iterations)
+```
+
+- Predection for our model
+```python
+np.dot([1,2.5],theta)
+```
+
+- Plotting our model
+```python
+plt.scatter(X[:,1],y)
+plt.xlabel("Area of the house")
+plt.ylabel("price of the house")
+plt.plot(X[:, 1], np.dot(X, theta))
+plt.legend(['Linear regeression', 'Training data']);
+```
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/lrmodel.png" width="400px" height="250px"></p>
+
+
+- Visualizing our cost function
+```python
+plt.plot(np.arange(len(J_history)), J_history, lw=2)
+```
+
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/costfunctionvisualization.png" width="400px" height="250px"></p>
 
 
 ## `Multiple Variables`
@@ -199,7 +300,9 @@
 	- **Example**
 		- Prediction = weight1 * (2800)  weight2 * [𝟐𝟖𝟎𝟎]^𝟐 + bias​
 
-## `Logistic Regression`
+## Classification
+
+## `Logistic Regression(classification)`
 
 > Logistic regression is used when the response variable is categorical in nature.
 
@@ -266,25 +369,26 @@
 	- lambda is a hyperparameter
 - The additional term controls the excessively fluctuating function such that the coefficients don't take extreme values. 
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="550px" height="300px"></p>
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="650px" height="300px"></p>
 
 ## `Vectorization`
 
 - Vectorization is the process of converting an algorithm from operating on a single value at a time to operating on a set of values (vector) at one time.
 - **Vectorized Implementation of cost function**
 ```python
-	np.sum((np.dot(x , w)-y)**2)
+	J = (1/(2 * m)) * np.sum(np.square(np.dot(X, theta) - y))
 ```
 
 - **Non Vectorized Implementation**
 ```python
+	k=0 #considering second matrix as vector
 	result=list()
-	for i in range(2):
+	for i in range(2): #no of rows in l1 matrix
 	    ans=0
-	    for j in range(2):
-	        ans=ans+l1[i][j]*l2[j][0]
-	    result.append((ans-l3[i][0])**2)
-	sum(result)
+	    for j in range(2): #no of columns in l1 matrix
+		ans=ans+l1[i][j]*l2[j][k]
+	    result.append((ans-l3[i][k])**2)
+	J = (1/(2 * m)) * sum(result)
 ```
 
 ## `Unsupervised Learning`
@@ -309,7 +413,7 @@
 ### Application
 
 - **Image Compression**
-	- [refer here(https://github.com/bharathikannan1311/Python/tree/master/Webinar/ImageCompression)]
+	- refer here - https://github.com/bharathikannan1311/Python/tree/master/Webinar/ImageCompression
 
 ## `Reinforcement Learning`
 > The system takes a decision, learns from the feedback and takes better decisions in the future.
@@ -352,7 +456,7 @@
 	- [source](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.73792&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
 ### `Neural Networks from scratch in python`
-- [refer here](https://github.com/bharathikannan1311/Python/tree/master/ML/Neural%20Networks)
+- refer here - https://github.com/bharathikannan1311/Python/tree/master/ML/Neural%20Networks
 
 - **Applications**
 	- Financial Forecasting
@@ -362,7 +466,7 @@
 > Convolutional neural network is most commonly applied to analyzing visual imagery.
 - CNN is more efficient in terms of memory and complexity. Imagine NNs with billions of neurons, then CNNs would be less complex and saves memory compared to the NN.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/cnn.png" width="500px" height="300px"></p>
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/cnn.png" width="600px" height="300px"></p>
 
 - **Live demo**
 	- [source](http://poloclub.github.io/cnn-explainer/)
@@ -380,7 +484,7 @@
 >  In traditional neural networks, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words.
 - The main and most important feature of RNN is Hidden state, which remembers some information about a sequence.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/rnn.png" width="700px" height="300px"></p>
+<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/rnn.png" width="800px" height="300px"></p>
 
 - **Applications**
 	- Language Modelling and Generating Text.
@@ -391,8 +495,10 @@
 
 ### References
 
-- Machine Learning course by Andrew NG (coursera)
-- Deep Learning Specialization by Andrew NG (coursera)
-- Blog - towardsdatascience.com
-- Machine Learning crash course (google)
+- [Machine Learning](https://www.coursera.org/learn/machine-learning) course by Andrew NG (coursera)
+- [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) by Andrew NG (coursera)
+- Blogs - [Towardsdatascience.com](https://towardsdatascience.com/machine-learning/home)
+- [Machine Learning crash course](https://developers.google.com/machine-learning/crash-course/ml-intro) from google
+- [Code template](https://github.com/dibgerge/ml-coursera-python-assignments) - Github
+- [Images](https://github.com/bharathikannan1311/Python/tree/master/Webinar/Images) - taken from multiple sources credit goes to respective owners
 	- and many other references
