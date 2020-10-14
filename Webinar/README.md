@@ -12,7 +12,7 @@
 			- [Linear Regression from scratch in python](#linear-regression-from-scratch-in-python)
 			- [Multiple Variables](#multiple-variables)
 			- [Polynomial Regression](#polynomial-regression)
-		- [Logistic Regression](#logistic-regression-classification)
+		- [Logistic Regression](#logistic-regression)
 		- [One Vs All](#one-vs-all)
 		- [Regularization](#regularization)
 		- [Vectorization](#vectorization)
@@ -302,7 +302,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 
 ## Classification
 
-## `Logistic Regression(classification)`
+## `Logistic Regression`
 
 > Logistic regression is used when the response variable is categorical in nature.
 
