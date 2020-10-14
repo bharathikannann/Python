@@ -12,7 +12,7 @@
 			- [Linear Regression from scratch in python](#linear-regression-from-scratch-in-python)
 			- [Multiple Variables](#multiple-variables)
 			- [Polynomial Regression](#polynomial-regression)
-		- [Logistic Regression](#logistic-regression)
+		- [Logistic Regression](#logistic-regression-classification)
 		- [One Vs All](#one-vs-all)
 		- [Regularization](#regularization)
 		- [Vectorization](#vectorization)
