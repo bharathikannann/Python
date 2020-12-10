@@ -1,3 +1,8 @@
+These are the materials and resources for my webinar on [Machine learning and Deep learning](https://bharathikannann.github.io/blogs/machine-learning-and-deep-learning-webinar/).<br>
+Webinar video - [link](https://youtu.be/9wVjTK6Fv1k?t=3)<br>
+About this webinar - [link](intro.md)<br>
+My personal blog page - [link](bharathikannann.github.io/blogs)
+
 # `Machine Learning and Deep Learning`
 
 ## Table of contents
@@ -29,7 +34,7 @@
 ## Artificial Intelligence
 > **Artificial intelligence (AI) is the broad science of mimicking human abilities, machine learning is a specific subset of AI that trains a machine how to learn.**
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/aimldl.png" width="300px" height="300px"></p>
+<p align="center"><img src="Images/aimldl.png" width="300px" height="300px"></p>
 
 ## `Machine Learning`
 
@@ -72,7 +77,7 @@
 
 > Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/lr.png" width="400px" height="250px"></p>
+<p align="center"><img src="Images/lr.png" width="400px" height="250px"></p>
 
 - Training Dataset
 - X - input
@@ -142,7 +147,7 @@
 
 - **Algorithm** 
 
-	- <p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/gd.png" width="450px" height="350px"></p>
+	- <p align="center"><img src="Images/gd.png" width="450px" height="350px"></p>
 
 	> - weight := weight - learning_rate * differentiation of cost with respect to weight
 	> - bias := bias - learning rate * differentiation of cost with respect to bias
@@ -182,7 +187,7 @@ plt.xlabel("Area of the house")
 plt.ylabel("price of the house")
 ```
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/linearregressiondatapoints.png" width="400px" height="250px"></p>
+<p align="center"><img src="Images/linearregressiondatapoints.png" width="400px" height="250px"></p>
 
 - We add another dimension to our data to accommodate the (bias)  intercept term so that it will be easy for vectorization.
 ```python
@@ -245,7 +250,7 @@ plt.plot(X[:, 1], np.dot(X, theta))
 plt.legend(['Linear regeression', 'Training data']);
 ```
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/lrmodel.png" width="400px" height="250px"></p>
+<p align="center"><img src="Images/lrmodel.png" width="400px" height="250px"></p>
 
 
 - Visualizing our cost function
@@ -253,7 +258,7 @@ plt.legend(['Linear regeression', 'Training data']);
 plt.plot(np.arange(len(J_history)), J_history, lw=2)
 ```
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/costfunctionvisualization.png" width="400px" height="250px"></p>
+<p align="center"><img src="Images/costfunctionvisualization.png" width="400px" height="250px"></p>
 
 
 ## `Multiple Variables`
@@ -306,7 +311,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 
 > Logistic regression is used when the response variable is categorical in nature.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/logr.png" width="350px" height="300px"></p>
+<p align="center"><img src="Images/logr.png" width="350px" height="300px"></p>
 
 - Example :
     - Spam/Not spam
@@ -357,7 +362,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 - If we have a classification problem and there are N distinct classes. In this case, we'll have to train a multi-class classifier instead of a binary one. 
 - One-vs-all classification is a method which involves **training N distinct binary classifiers**, each designed for recognizing a particular class.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/onevsall.jpeg" width="400px" height="300px"></p>
+<p align="center"><img src="Images/onevsall.jpeg" width="400px" height="300px"></p>
 
 ## `Regularization`
 
@@ -369,7 +374,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 	- lambda is a hyperparameter
 - The additional term controls the excessively fluctuating function such that the coefficients don't take extreme values. 
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/regularization.png" width="650px" height="300px"></p>
+<p align="center"><img src="Images/regularization.png" width="650px" height="300px"></p>
 
 ## `Vectorization`
 
@@ -401,7 +406,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 
 ## `Clustering`
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/clustering.png" width="450px" height="300px"></p>
+<p align="center"><img src="Images/clustering.png" width="450px" height="300px"></p>
 
 - **K Means Algorithm**
 	- It finds a fixed number (k) of clusters in a set of data.
@@ -419,7 +424,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 > The system takes a decision, learns from the feedback and takes better decisions in the future.
 - It is about taking suitable action to maximize reward in a particular situation. In the absence of a training dataset, it is bound to learn from its experience.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/reinforcementlearning.png" width="350px" height="300px"></p>
+<p align="center"><img src="Images/reinforcementlearning.png" width="350px" height="300px"></p>
 
 - Example: 
 	- We have an agent and a reward, with many hurdles in between.
@@ -443,12 +448,12 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 - Deep learning is a branch of machine learning which is completely based on artificial neural networks.
 > Neural Network is going to mimic the human brain.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/neuron.jpg" width="100px" height="80px"></p>
+<p align="center"><img src="Images/neuron.jpg" width="100px" height="80px"></p>
 
 ## `Neural Networks`
 - Neural networks are used to solve complex problems people face in real-world situations. These networks can learn and model the relationships between inputs and outputs that are complex and nonlinear.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/nn.png" width="300px" height="300px"></p>
+<p align="center"><img src="Images/nn.png" width="300px" height="300px"></p>
 
 - **Neural Network Structure**
 	- [source](https://developers.google.com/machine-learning/crash-course/introduction-to-neural-networks/anatomy)
@@ -466,7 +471,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 > Convolutional neural network is most commonly applied to analyzing visual imagery.
 - CNN is more efficient in terms of memory and complexity. Imagine NNs with billions of neurons, then CNNs would be less complex and saves memory compared to the NN.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/cnn.png" width="600px" height="300px"></p>
+<p align="center"><img src="Images/cnn.png" width="600px" height="300px"></p>
 
 - **Live demo**
 	- [source](http://poloclub.github.io/cnn-explainer/)
@@ -484,7 +489,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 >  In traditional neural networks, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words.
 - The main and most important feature of RNN is Hidden state, which remembers some information about a sequence.
 
-<p align="center"><img src="https://github.com/bharathikannan1311/Python/blob/master/Webinar/Images/rnn.png" width="800px" height="300px"></p>
+<p align="center"><img src="Images/rnn.png" width="800px" height="300px"></p>
 
 - **Applications**
 	- Language Modelling and Generating Text.
@@ -500,5 +505,5 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 - Blogs - [Towardsdatascience.com](https://towardsdatascience.com/machine-learning/home)
 - [Machine Learning crash course](https://developers.google.com/machine-learning/crash-course/ml-intro) from google
 - [Code template](https://github.com/dibgerge/ml-coursera-python-assignments) - Github
-- [Images](https://github.com/bharathikannan1311/Python/tree/master/Webinar/Images) - taken from multiple sources credit goes to respective owners
+- [Images](https://github.com/bharathikannan1311/Python/tree/master/Webinar/Images) - taken from multiple sources credit goes to respective owners. If any issues please contact me at **bharathikannan1311@gmail.com**.
 	- and many other references
