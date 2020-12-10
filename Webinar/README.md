@@ -307,7 +307,7 @@ plt.plot(np.arange(len(J_history)), J_history, lw=2)
 
 ## Classification
 
-## `Logistic Regression(classification)`
+## `Logistic Regression`
 
 > Logistic regression is used when the response variable is categorical in nature.
 
