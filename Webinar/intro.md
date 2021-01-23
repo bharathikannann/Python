@@ -14,4 +14,4 @@ Student Cordinators<br>
   S Mantharagiri, III ECE.<br>
 College website : sece.ac.in<br> 
 
-Check out by [blogs](https://bharathikannann.github.io/blogs/machine-learning-and-deep-learning-webinar/)
+Check out my [blogs](https://bharathikannann.github.io/blogs/machine-learning-and-deep-learning-webinar/)
